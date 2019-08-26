@@ -8,6 +8,8 @@ public class BeanMachineMethods {
 		// 1. array for the plinco chips to fall into.
 		// Hamza and Qusai
 		// branch: winningCups
+		int[] winningCups = new int[5];
+		//fillWinningCups(winningCups);
 		
 		// 2. a way to find out what the cup the chip fell into
 		// Henry and Cyrus
