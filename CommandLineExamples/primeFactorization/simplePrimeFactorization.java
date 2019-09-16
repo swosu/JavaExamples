@@ -4,7 +4,7 @@ public class simplePrimeFactorization {
     // Prints "Hello, World" to the terminal window.
     System.out.println("Hello, World");
 
-    int firstPrime = 8;
+    int firstPrime = 13;
     System.out.printf("our first prime is %d.\n", firstPrime);
     int remainder = firstPrime;
     int nextFactor = 0;
