@@ -1,14 +1,16 @@
 public class simplePrimeFactorization {
 
   public static void main(String[] args) {
-    // Prints "Hello, World" to the terminal window.
-    System.out.println("Hello, World");
+    sayHello();
 
-    int firstPrime = 13;
-    System.out.printf("our first prime is %d.\n", firstPrime);
+    int firstPrime = 24;
     int remainder = firstPrime;
     int nextFactor = 0;
     int sumOfFactors = 0;
+
+    printNumberWeAreChecking(firstPrime);
+
+
     System.out.printf("our initial remainder is %d.\n",
     remainder);
     // 8 is 2 * 2 * 2.
@@ -45,6 +47,17 @@ public class simplePrimeFactorization {
 
     System.out.println("Thank you and good night.");
   }
+
+  private static void sayHello ()
+  {
+      System.out.println("Hello, World");
+  }
+
+  private static void printNumberWeAreChecking (int firstPrime)
+  {
+      System.out.printf("our first prime is %d.\n", firstPrime);
+  }
+
 
   private static boolean checkRemainder(int remainder)
   {
