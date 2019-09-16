@@ -7,6 +7,7 @@ public class simplePrimeFactorization {
     int firstPrime = 8;
     System.out.printf("our first prime is %d.\n", firstPrime);
     int remainder = firstPrime;
+    int nextFactor = 0;
     System.out.printf("our initial remainder is %d.\n", remainder);
     // 8 is 2 * 2 * 2.
     // so the sum of the factors is 6.
@@ -16,17 +17,20 @@ public class simplePrimeFactorization {
     boolean remainderIsPrime = checkRemainder(remainder);
     if(remainderIsPrime)
     {
-        System.out.printf("remainder is prime.\n");
+      System.out.printf("remainder is prime.\n");
     }
     else
     {
       System.out.printf("remainder is not prime.\n");
+      nextFactor = findNextFactor(remainder);
+      System.out.printf("our next factor is %d.\n", nextFactor);
     }
-    
+
     System.out.println("Thank you and good night.");
   }
 
-  private static boolean checkRemainder(int remainder){
+  private static boolean checkRemainder(int remainder)
+  {
     System.out.println("Hello inside method.");
     boolean remainderIsPrime = true;
     for(int checkValue = 2; checkValue < remainder; checkValue++)
@@ -39,4 +43,18 @@ public class simplePrimeFactorization {
     return remainderIsPrime;
   }
 
+  private static int findNextFactor(int remainder)
+  {
+    int nextFactor = 0;
+    for(int checkValue = 2; checkValue < remainder; checkValue++)
+    {
+      if(0 == (remainder%checkValue))
+      {
+        nextFactor = checkValue;
+        break;
+      }
+
+    }
+    return nextFactor;
+  }
 }
