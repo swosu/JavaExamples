@@ -6,5 +6,5 @@ public class HelloWorldMethod {
 
 	private static void sayHello() {
 		System.out.println("Hello Java from a method!");
-	}
+	} 
 }

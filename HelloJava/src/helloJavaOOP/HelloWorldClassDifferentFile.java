@@ -4,5 +4,5 @@ public class HelloWorldClassDifferentFile {
 		customClassHelloJavaClassDifferentFile ourOtherObject = 
 				new customClassHelloJavaClassDifferentFile();
 		ourOtherObject.sayHello();
-	}
+	} 
 }

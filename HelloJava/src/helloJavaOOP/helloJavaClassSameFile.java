@@ -12,5 +12,5 @@ class customClassHelloJavaClassSameFile {
 	}
 	void sayHello() {
 		System.out.println("Hello Java from inside a class!");
-	}
+	} 
 }
