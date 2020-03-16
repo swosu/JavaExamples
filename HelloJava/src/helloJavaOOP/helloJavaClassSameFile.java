@@ -1,8 +1,7 @@
 package helloJavaOOP;
 public class helloJavaClassSameFile {
 	public static void main(String[] args) {
-		customClassHelloJavaClassSameFile ourObject = 
-				new customClassHelloJavaClassSameFile();
+		customClassHelloJavaClassSameFile ourObject = new customClassHelloJavaClassSameFile();
 		ourObject.sayHello();
 	}
 }
