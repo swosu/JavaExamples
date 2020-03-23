@@ -44,8 +44,11 @@ public class Ch17Exercise02 {
 		System.out.println("Reading in: ");
 		while((value = input.read()) != -1)
 			System.out.print(value + ", ");
-
-
+		
+		/* From 17_02
+		 * Created: 66, 32, 35, 27, 25, 25, 4, 96, 45, 80,
+		 * Reading in: 66, 32, 35, 27, 25, 25, 4, 96, 45, 80, Bye.
+		 */
 
 		System.out.println("Bye.");
 	}

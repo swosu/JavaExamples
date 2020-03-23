@@ -18,6 +18,8 @@ import java.util.Scanner;
 public class Ch17Exercise15 {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
+		System.out.println("Hello.");
+		
 		// Create a scanner
 		Scanner input = new Scanner(System.in);
 
@@ -49,28 +51,22 @@ public class Ch17Exercise15 {
 		System.out.println("Reading in: ");
 		while((value = testInput.read()) != -1)
 			System.out.print(value + ", ");
+		
+		System.out.println("Bye.");
 
 		// files from Eclipse are written to: /JavaExamples/LiangCh17Exercises
 
-		// Results from 17.02
-		/*
-		 * Hello.
-		 * Our Number: 36, 73, 88, 15, 5, 81, 25, 79, 51, 65,
-		 * Reading in:
-		 * 36, 73, 88, 15, 5, 81, 25, 79, 51, 65, Bye.
+		/* From 17_02
+		 * Created: 66, 32, 35, 27, 25, 25, 4, 96, 45, 80,
+		 * Reading in: 66, 32, 35, 27, 25, 25, 4, 96, 45, 80, Bye.
 		 */
-
-		// results from 17.14:
-		/*
-		 * Hello.
-		 * Enter input flie name: Enter output flie name: Reading in:
-		 * 41, 78, 93, 20, 10, 86, 30, 84, 56, 70, Bye.
+		
+		/* From 17_14
+		 * read in: 71, 37, 40, 32, 30, 30, 9, 101, 50, 85,
 		 */
-
-		// Results from 17.15
-		/*
-		 * Enter the encrypted file name: Enter the file name for the decrypted file: Reading in:
-		 * 36, 73, 88, 15, 5, 81, 25, 79, 51, 65, 
+		
+		/* From 17_15
+		 * read in:66, 32, 35, 27, 25, 25, 4, 96, 45, 80,
 		 */
 
 	}

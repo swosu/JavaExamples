@@ -54,18 +54,16 @@ public class Ch17Exercise14 {
 		// files from Eclipse are written to: /JavaExamples/LiangCh17Exercises
 
 
-		/*
-		 * Hello.
-		 * Our Number: 36, 73, 88, 15, 5, 81, 25, 79, 51, 65,
-		 * Reading in:
-		 * 36, 73, 88, 15, 5, 81, 25, 79, 51, 65, Bye.
+		/* From 17_02
+		 * Created: 66, 32, 35, 27, 25, 25, 4, 96, 45, 80,
+		 * Reading in: 66, 32, 35, 27, 25, 25, 4, 96, 45, 80, Bye.
+		 */
+		
+		/* From 17_14
+		 * Created: 71, 37, 40, 32, 30, 30, 9, 101, 50, 85,
 		 */
 
-		/*
-		 * Hello.
-		 * Enter input flie name: Enter output flie name: Reading in:
-		 * 41, 78, 93, 20, 10, 86, 30, 84, 56, 70, Bye.
-		 */
+
 
 	}
 
