@@ -22,7 +22,8 @@ public class Ch10Exercise18 {
 
 		int primesToFindBigInt = 5;
 		//BigInteger startingValueBigInt =new BigInteger("1111");
-		BigInteger startingValueBigInt =new BigInteger(Long.MAX_VALUE + "");
+		//BigInteger startingValueBigInt =new BigInteger(Long.MAX_VALUE + "");
+		BigInteger startingValueBigInt =new BigInteger(Integer.MAX_VALUE + "");
 		System.out.println("Run for Big ints.");
 		findPrimesBigInt(startingValueBigInt, primesToFindBigInt);
 		
@@ -45,13 +46,15 @@ public class Ch10Exercise18 {
 			//System.out.println("Starting value: " + workingValue);
 			isPrime = true;
 			for(BigInteger checkValue = new BigInteger("2"); 
-					checkValue.compareTo(workingValue) < 0; 
+					checkValue.compareTo(workingValue.divide(new BigInteger("2"))) < 0; 
 					checkValue = checkValue.add(BigInteger.ONE))
 			{
 				//System.out.println("Check value" + checkValue);
 				if(BigInteger.ZERO.equals(workingValue.mod(checkValue)))
 				{
 					isPrime = false;
+					System.out.println("not prime.");
+					break;
 				}
 
 			}
