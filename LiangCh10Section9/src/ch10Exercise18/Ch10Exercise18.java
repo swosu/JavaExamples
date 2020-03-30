@@ -22,12 +22,14 @@ public class Ch10Exercise18 {
 
 		int primesToFindBigInt = 5;
 		//BigInteger startingValueBigInt =new BigInteger("1111");
-		BigInteger startingValueBigInt =new BigInteger(Integer.MAX_VALUE + "");
+		BigInteger startingValueBigInt =new BigInteger(Long.MAX_VALUE + "");
 		System.out.println("Run for Big ints.");
 		findPrimesBigInt(startingValueBigInt, primesToFindBigInt);
 		
 		// looking for Integer.MAX_VALUE
-		// first prime: 2147483647 at about 3 minutes (3.5 minutes with the added divide by 2)
+		// first prime: 2147483647 at about 3 minutes 
+		// (3.5 minutes with the added divide by 2)
+		// (3.5 minutes without the added divide by 2)
 
 		System.out.println("Bye.");
 	}
