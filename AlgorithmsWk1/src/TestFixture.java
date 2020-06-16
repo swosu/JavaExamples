@@ -85,15 +85,16 @@ public class TestFixture {
 	public void mergeSortTheList(LinkedList<Integer> list) {
 		if (list.size() > 1) {
 			// Merge sort the first half
-			//int[] firstHalf = new int[list.size() / 2];
 			LinkedList<Integer> firstHalf=new LinkedList<Integer>();
 			firstHalf.addAll(list.subList(0, list.size() / 2));
+			//System.out.print("First Half:\t");
+			//System.out.println(firstHalf);
 			mergeSortTheList(firstHalf);
 			// Merge sort the second half
-			int secondHalfLength = list.size() - list.size() / 2;
-			//int[] secondHalf = new int[secondHalfLength];
 			LinkedList<Integer> secondHalf=new LinkedList<Integer>();
-			secondHalf.addAll(list.subList(list.size() / 2,secondHalfLength));
+			secondHalf.addAll(list.subList(list.size()/2,list.size() ));
+			//System.out.print("Second Half:\t");
+			//System.out.println(secondHalf);
 			mergeSortTheList(secondHalf);
 			// Merge firstHalf with secondHalf into list
 			mergeList(firstHalf, secondHalf, list);
@@ -104,7 +105,7 @@ public class TestFixture {
 	private void mergeList(
 			LinkedList<Integer> firstHalf, 
 			LinkedList<Integer> secondHalf, 
-			LinkedList<Integer> list) 
+			LinkedList<Integer> temp) 
 	{
 
 		int current1 = 0; 
@@ -115,21 +116,35 @@ public class TestFixture {
 		{
 			if (firstHalf.get(current1) < secondHalf.get(current2))
 			{
-				list.set(current3, firstHalf.get(current1));
+				temp.set(current3, firstHalf.get(current1));
 				current1++;
 				current3++;
 			}
 			else
 			{
-				list.set(current3, secondHalf.get(current2));
+				temp.set(current3, secondHalf.get(current2));
 				current2++;
 				current3++;
 			}
+			//System.out.println("Temp");
+			//System.out.println(temp);
 		}
 		while (current1 < firstHalf.size())
-			list.set(current3++, firstHalf.get(current1++));
+		{
+			temp.set(current3, firstHalf.get(current1));
+			current1++;
+			current3++;
+			//System.out.println("Temp2");
+			//System.out.println(temp);
+		}
 		while (current2 < secondHalf.size())
-			list.set(current3++, secondHalf.get(current2++));
+		{
+			temp.set(current3, secondHalf.get(current2));
+			current2++;
+			current3++;
+			//System.out.println("Temp3");
+			//System.out.println(temp);
+		}
 	}
 
 

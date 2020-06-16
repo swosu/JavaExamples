@@ -23,10 +23,10 @@ public class Week1FixtureDivideAndConquerSorting {
 
 		TestFixture fixture = new TestFixture();
 		System.out.println("Time in milliseconds");
-		System.out.println("Array size, \t merge sort, \t quick sort");
+		System.out.println("Array size, \t merge array, \t quick array, \t merge list");
 		for(int repeatCount = 1; repeatCount < 3; repeatCount++)
 		{
-			fixture.setArraySize(5);
+			fixture.setArraySize(10);
 			System.out.print(fixture.getArraySize() + "\t");
 
 			// Make array to sort
@@ -43,9 +43,9 @@ public class Week1FixtureDivideAndConquerSorting {
 			//fixture.printArray(mergeSortArrayCopy);
 			LinkedList<Integer> mergeSortListCopy=new LinkedList<Integer>();
 			fixture.copyList(startingList, mergeSortListCopy);
-			System.out.println();
-			fixture.printList(startingList);
-			fixture.printList(mergeSortListCopy);
+			//System.out.println();
+			//fixture.printList(startingList);
+			//fixture.printList(mergeSortListCopy);
 
 			// Make a copy for Quick Sort
 			int[] quickSortArrayCopy = new int[fixture.getArraySize()];
@@ -53,7 +53,7 @@ public class Week1FixtureDivideAndConquerSorting {
 			//fixture.printArray(quickSortArrayCopy);
 			LinkedList<Integer> quickSortListCopy=new LinkedList<Integer>();
 			fixture.copyList(startingList, quickSortListCopy);
-			fixture.printList(quickSortListCopy);
+			//fixture.printList(quickSortListCopy);
 
 			// sort with merge sort
 			long startTime = System.currentTimeMillis();
@@ -66,20 +66,20 @@ public class Week1FixtureDivideAndConquerSorting {
 			startTime = System.currentTimeMillis();
 			fixture.quickSort(quickSortArrayCopy);
 			endTime = System.currentTimeMillis();
-			System.out.println((endTime - startTime) + "\t");
+			System.out.print((endTime - startTime) + "\t");
 			//fixture.printArray(quickSortArrayCopy);
 			
 			// merge sort on a list
 			startTime = System.currentTimeMillis();
 			fixture.mergeSortTheList(mergeSortListCopy);
 			endTime = System.currentTimeMillis();
-			System.out.print((endTime - startTime) + "\t");
-			System.out.println("starting list");
-			fixture.printList(startingList);
-			System.out.println("merge sort array results");
-			fixture.printArray(mergeSortArrayCopy);
-			System.out.println("merge sort list results");
-			fixture.printList(mergeSortListCopy);
+			System.out.println((endTime - startTime) + "\t");
+			//System.out.print("starting list:\t\t");
+			//fixture.printList(startingList);
+			//System.out.println("merge sort array results");
+			//fixture.printArray(mergeSortArrayCopy);
+			//System.out.print("merge sort list results:\t");
+			//fixture.printList(mergeSortListCopy);
 			
 		}
 	}
