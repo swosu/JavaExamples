@@ -30,11 +30,22 @@ public class TestFixture {
 		System.out.println();
 	}
 
+	public void printList(LinkedList<Integer> List) {
+		System.out.println(List);
+	}
+
 	public void copyArray(int[] startingArray, int[] mergeSortArrayCopy) {
 		for(int index = 0; index < startingArray.length; index++)
 		{
 			mergeSortArrayCopy[index] = startingArray[index];
 		}
+	}
+
+	public void copyList(
+			LinkedList<Integer> startingList, 
+			LinkedList<Integer> ListCopy) 
+	{
+		ListCopy.addAll(startingList);
 	}
 
 	public void mergeSortTheArray(int[] list) {
@@ -50,13 +61,11 @@ public class TestFixture {
 					secondHalf, 0, secondHalfLength);
 			mergeSortTheArray(secondHalf);
 			// Merge firstHalf with secondHalf into list
-			merge(firstHalf, secondHalf, list);
+			mergeArray(firstHalf, secondHalf, list);
 		}
 	}
 
-	/** Merge two sorted lists */
-	private void merge(int[] list1, int[] list2, int[] temp) {
-
+	private void mergeArray(int[] list1, int[] list2, int[] temp) {
 		int current1 = 0; 
 		int current2 = 0; 
 		int current3 = 0; 
@@ -72,6 +81,57 @@ public class TestFixture {
 		while (current2 < list2.length)
 			temp[current3++] = list2[current2++];
 	}
+
+	public void mergeSortTheList(LinkedList<Integer> list) {
+		if (list.size() > 1) {
+			// Merge sort the first half
+			//int[] firstHalf = new int[list.size() / 2];
+			LinkedList<Integer> firstHalf=new LinkedList<Integer>();
+			firstHalf.addAll(list.subList(0, list.size() / 2));
+			mergeSortTheList(firstHalf);
+			// Merge sort the second half
+			int secondHalfLength = list.size() - list.size() / 2;
+			//int[] secondHalf = new int[secondHalfLength];
+			LinkedList<Integer> secondHalf=new LinkedList<Integer>();
+			secondHalf.addAll(list.subList(list.size() / 2,secondHalfLength));
+			mergeSortTheList(secondHalf);
+			// Merge firstHalf with secondHalf into list
+			mergeList(firstHalf, secondHalf, list);
+		}
+	}
+
+	/** Merge two sorted lists */
+	private void mergeList(
+			LinkedList<Integer> firstHalf, 
+			LinkedList<Integer> secondHalf, 
+			LinkedList<Integer> list) 
+	{
+
+		int current1 = 0; 
+		int current2 = 0; 
+		int current3 = 0; 
+
+		while (current1 < firstHalf.size() && current2 < secondHalf.size()) 
+		{
+			if (firstHalf.get(current1) < secondHalf.get(current2))
+			{
+				list.set(current3, firstHalf.get(current1));
+				current1++;
+				current3++;
+			}
+			else
+			{
+				list.set(current3, secondHalf.get(current2));
+				current2++;
+				current3++;
+			}
+		}
+		while (current1 < firstHalf.size())
+			list.set(current3++, firstHalf.get(current1++));
+		while (current2 < secondHalf.size())
+			list.set(current3++, secondHalf.get(current2++));
+	}
+
 
 	public void quickSort(int[] list) {
 		quickSort(list, 0, list.length - 1);
