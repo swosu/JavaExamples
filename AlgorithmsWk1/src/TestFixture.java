@@ -41,6 +41,16 @@ public class TestFixture {
 		}
 	}
 
+	public void copyStartingArrayToStartingList(
+			int[] startingArray, 
+			LinkedList<Integer> startingList) 
+	{
+		for(int index = 0; index < startingArray.length; index++)
+		{
+			startingList.addLast(startingArray[index]);
+		}
+	}
+
 	public void copyList(
 			LinkedList<Integer> startingList, 
 			LinkedList<Integer> ListCopy) 
@@ -192,13 +202,51 @@ public class TestFixture {
 		}
 	}
 
-	public void copyStartingArrayToStartingList(
-			int[] startingArray, 
-			LinkedList<Integer> startingList) 
-	{
-		for(int index = 0; index < startingArray.length; index++)
-		{
-			startingList.addLast(startingArray[index]);
+
+
+	public void quickSortList(LinkedList<Integer> quickSortListCopy) {
+		quickSortList(quickSortListCopy, 0, quickSortListCopy.size() - 1);
+	}
+
+	private void quickSortList(
+			LinkedList<Integer> list, 
+			int first, int last) {
+		if (last > first) {
+			int pivotIndex = partitionList(list, first, last);
+			quickSortList(list, first, pivotIndex - 1);
+			quickSortList(list, pivotIndex + 1, last);
+		}
+		
+	}
+
+	private int partitionList(LinkedList<Integer> list, int first, int last) {
+		int pivot = list.get(first); // Choose the first element as the pivot
+		int low = first + 1; // Index for forward search
+		int high = last; // Index for backward search
+		while (high > low) {
+			// Search forward from left
+			while (low <= high && list.get(low) <= pivot)
+				low++;
+			// Search backward from right
+			while (low <= high && list.get(high) > pivot)
+				high--;
+			// Swap two elements in the list
+			if (high > low) {
+				int temp = list.get(high);
+				list.set(high, list.get(low));
+				list.set(low, temp);
+			}
+		}
+		while (high > first && list.get(high) >= pivot)
+			high--;
+		// Swap pivot with list[high]
+		if (pivot > list.get(high)) {
+			list.set(first, list.get(high));
+			list.set(high, pivot);
+			return high;
+		}
+		else {
+			return first;
 		}
 	}
 }
