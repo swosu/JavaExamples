@@ -25,9 +25,9 @@ public class Week1FixtureDivideAndConquerSorting {
 		System.out.println("Time in milliseconds");
 		System.out.println("Array size, \t merge array, " +
 		"\t quick array, \t merge list, \t quick list");
-		for(int repeatCount = 1; repeatCount < 20; repeatCount++)
+		for(int repeatCount = 1; repeatCount < 10; repeatCount++)
 		{
-			fixture.setArraySize(100000);
+			fixture.setArraySize(500000);
 			System.out.print(fixture.getArraySize() + "\t");
 
 			// Make array to sort
